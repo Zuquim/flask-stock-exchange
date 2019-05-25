@@ -131,7 +131,7 @@ def offer(operation=None, broker=None, stock=None, value=None, shares=None):
         return index(0)
     new_offer = Offer(operation, broker, stock, value, shares)
     if operation == 'buy':
-        insert_into_wallet(new_offer)
+        return insert_into_wallet(new_offer)
     elif operation == 'sell':
         wallet_shares = get_shares_from_wallet(new_offer)
         if wallet_shares is None:
